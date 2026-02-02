@@ -1,4 +1,4 @@
-# Zyntra - Lifestyle Blog Website
+# Zontri - Lifestyle Blog Website
 
 A comprehensive lifestyle blog website featuring six main categories: Fashion & Accessories, Health & Beauty, Home & Garden, Travel & Accommodation, Finance & Insurance, and Food & Beverage.
 
@@ -17,7 +17,7 @@ A comprehensive lifestyle blog website featuring six main categories: Fashion & 
 ## File Structure
 
 ```
-Zyntra/
+Zontri/
 ├── index.html          # Homepage
 ├── article.html        # Article detail page
 ├── category.html       # Category listing page
@@ -50,7 +50,7 @@ Zyntra/
 - **Product Detail**: Detailed product information with images
 
 ### Other Pages
-- **About**: Information about Zyntra and its mission
+- **About**: Information about Zontri and its mission
 - **Contact**: Contact form and contact information
 
 ## Articles
@@ -118,4 +118,5 @@ To add new articles or products, edit `js/data.js`:
 To modify styles, edit `css/style.css`:
 - Color variables are defined in `:root`
 - Responsive breakpoints are in the media queries section
+
 
