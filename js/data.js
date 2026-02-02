@@ -55,6 +55,54 @@ const articles = [
         ]
     },
     {
+        id: 7,
+        title: "Built for the Wild: Explore Badlands’ Full Hunting Gear Lineup",
+        category: "travel",
+        date: "2026-01-06",
+        featured: true,
+        excerpt: "From wind‑carved ridgelines to snow‑covered valleys, discover how Badlands’ full hunting gear lineup equips you to go deeper, stay longer, and hunt harder.",
+        image: "image/6-1.png",
+        content: `
+            <p>When that first cold wind cuts across the ridge at daybreak, whether you can stay focused until the last light often comes down to one thing: your gear. Badlands was built around a simple promise—“Built for the Wild”—and every pack, apparel layer, and accessory is engineered to keep that promise when the terrain gets steep and the weather turns unforgiving.</p>
+
+            <p>Drawing inspiration from the official <a href="https://www.badlandsgear.com/" target="_blank" rel="noopener noreferrer">Badlands website</a>, this guide walks you through the brand’s core hunting lineup—from load‑bearing packs to layered apparel and smart accessories—so you can build a system that actually works when you’re miles from the truck.</p>
+
+            <h2>1. Packs: The Backbone of Your Backcountry Setup</h2>
+            <p>Inside the Badlands lineup, packs are the heart of the brand. From lightweight day packs to heavy‑hauling, frame‑supported systems for multi‑day hunts, everything is built around three priorities: stability, silence, and durability. Contoured back panels, supportive hip belts, and generous padding work together to move weight off your shoulders and onto your hips, making long climbs and heavy pack‑outs far more manageable.</p>
+
+            <img src="image/6-2.png" alt="Badlands hunting pack system">
+
+            <p>Badlands also leans heavily on quiet face fabrics and low‑glare hardware, helping you cut down on unwanted noise and shine when you brush through timber or rocks. Multiple compartments and lash points keep optics, ammunition, layers, and meat bags organized, so you always know where everything is when seconds matter.</p>
+
+            <h2>2. Layered Apparel: Built for Changing Weather and Higher Effort</h2>
+            <p>Badlands apparel isn’t just “a jacket and some pants”—it’s a full layering system. Moisture‑managing next‑to‑skin pieces move sweat away from your body, mid‑layers trap warmth without bulk, and durable outer shells block wind, rain, and snow. Whether you’re glassing a windy ridge in early fall or tracking through deep winter timber, you can fine‑tune your comfort by adding or stripping layers.</p>
+
+            <img src="image/6-3.png" alt="Badlands layered hunting apparel and camouflage">
+
+            <p>The brand’s camouflage and color palettes are also designed with function in mind. By breaking up the human outline and softening contrast in changing light, Badlands patterns help you blend into brush, rock, and timber—making you harder to pick out through binoculars and, more importantly, in the eyes of wary game.</p>
+
+            <h2>3. Accessories: Small Pieces, Big Difference in the Field</h2>
+            <p>Too many hunters only think about “big gear,” but Badlands puts serious thought into the little details. Bino harnesses, ammo pouches, minimalist organizers, and belt‑mounted pockets all work together to keep your essentials exactly where your hands expect them to be. That means fewer noisy zippers, less digging in your pack, and more time keeping your eyes on the hillside.</p>
+
+            <img src="image/6-4.png" alt="Badlands bino harness and accessory system">
+
+            <p>Most of these accessories use modular attachment points, so you can move, add, or remove pockets based on your hunting style. Whether you’re still‑hunting tight timber, side‑hilling shale slopes, or spending long sits behind glass, you can build a front‑of‑body setup that matches your personal flow.</p>
+
+            <h2>4. Building Your Own Badlands System</h2>
+            <p>If you’re new to Badlands, a practical way to start is to think in three pillars: one primary pack, a simple but complete layering kit, and a small set of mission‑critical accessories. Choose a pack that matches your typical hunt length and terrain, then add base, mid, and outer layers that match your local climate. Finally, use a bino harness and a few smart pouches to fix the moments when you usually find yourself fumbling for gear.</p>
+
+            <p>A well‑built Badlands system isn’t about looking more “tactical” in photos. It’s about freeing up your attention for what actually matters—wind, sign, animal behavior, and shot opportunity—instead of fighting cold, weight, and disorganized gear. That’s where “Built for the Wild” stops being a slogan and starts feeling real, step after step, season after season.</p>
+        `,
+        products: [
+            {
+                name: "Badlands MRK 4 Big Game Pack",
+                description: "A purpose‑built big game hunting pack designed to carry heavy loads comfortably, stay quiet in the field, and keep your essentials organized on long days in steep country.",
+                price: "$399",
+                image: "image/mrk-4.png"
+            }
+        ]
+    },
+    {
         id: 2,
         title: "Natural Skincare Routine for Glowing Skin",
         category: "health",
@@ -422,6 +470,54 @@ const products = [
         ],
         buyLink: "https://www.amazon.com/s?k=artisan+coffee+blend",
         relatedArticleId: 6
+    },
+    {
+        id: 13,
+        name: "Badlands MRK 4 Big Game Pack",
+        category: "travel",
+        description: "A dedicated big game hunting pack engineered for hauling serious weight with all‑day comfort, using quiet, durable materials and a layout built for real hunts.",
+        price: "$399",
+        image: "image/mrk-4.png",
+        rating: 4.8,
+        reviewCount: 142,
+        reviews: [
+            { author: "Hunter L.", rating: 5, comment: "Carries weight incredibly well — hiked all day with a full load and my shoulders and hips still felt good.", date: "2026-01-12" },
+            { author: "Mark S.", rating: 5, comment: "Attachment points and pocket layout are spot on. Quiet, practical, and easily one of the best hunting packs I’ve run so far.", date: "2026-01-15" }
+        ],
+        buyLink: "https://www.badlandsgear.com/collections/big-game/products/mrk-4",
+        relatedArticleId: 7
+    },
+    {
+        id: 15,
+        name: "Badlands Layered Hunting Apparel System",
+        category: "travel",
+        description: "A complete three‑layer hunting clothing system that covers moisture‑wicking base layers, warm mid‑layers, and protective outer shells.",
+        price: "$459",
+        image: "image/6-3.png",
+        rating: 4.7,
+        reviewCount: 97,
+        reviews: [
+            { author: "Chen Y.", rating: 5, comment: "Layering is super intuitive — just add or drop pieces as temps swing and you’re always in the comfort zone.", date: "2026-01-09" },
+            { author: "Alex R.", rating: 4, comment: "Great balance of warmth and breathability. Sat in the snow glassing for hours without getting chilled through.", date: "2026-01-18" }
+        ],
+        buyLink: "https://www.badlandsgear.com/",
+        relatedArticleId: 7
+    },
+    {
+        id: 17,
+        name: "Badlands Bino & Gear Harness Kit",
+        category: "travel",
+        description: "A bino and gear harness system with multiple pockets that keeps your glass, ammo, and small essentials right where you need them.",
+        price: "$189",
+        image: "image/6-4.png",
+        rating: 4.9,
+        reviewCount: 121,
+        reviews: [
+            { author: "Liang Z.", rating: 5, comment: "Everything I need is on my chest — no more digging in the pack and missing moments. Huge boost to real‑world efficiency.", date: "2026-01-20" },
+            { author: "Brian K.", rating: 5, comment: "Build quality is excellent and it rides steady. Wore it all day with no hot spots or pressure points.", date: "2026-01-22" }
+        ],
+        buyLink: "https://www.badlandsgear.com/",
+        relatedArticleId: 7
     }
 ];
 

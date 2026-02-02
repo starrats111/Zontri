@@ -97,13 +97,13 @@ function loadRecommendedArticles() {
         <a href="article.html?title=${encodeURIComponent(articleSlug)}" class="recommended-card">
             <div class="recommended-image">
                 <img src="${article.image}" alt="${article.title}">
-                <span class="recommended-badge">推荐</span>
+                <span class="recommended-badge">Featured</span>
             </div>
             <div class="recommended-content">
                 <div class="recommended-date">${formatDate(article.date)}</div>
                 <h3 class="recommended-title">${article.title}</h3>
                 <p class="recommended-excerpt">${article.excerpt}</p>
-                <span class="recommended-read-more">阅读更多 →</span>
+                <span class="recommended-read-more">Read More →</span>
             </div>
         </a>
     `;
