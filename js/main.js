@@ -70,6 +70,7 @@ function slugToTitle(slug) {
 // Load recommended articles on homepage
 function loadRecommendedArticles() {
     const recommendedGrid = document.getElementById('recommendedGrid');
+    const recommendedSection = document.querySelector('.recommended-section');
     if (!recommendedGrid) return;
 
     // Filter articles with featured flag
@@ -77,7 +78,16 @@ function loadRecommendedArticles() {
     
     if (recommendedArticles.length === 0) {
         recommendedGrid.innerHTML = '';
+        // Hide the entire recommended section if no articles
+        if (recommendedSection) {
+            recommendedSection.style.display = 'none';
+        }
         return;
+    }
+    
+    // Show the section if it was hidden
+    if (recommendedSection) {
+        recommendedSection.style.display = '';
     }
     
     // Render recommended articles
