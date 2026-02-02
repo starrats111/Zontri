@@ -10,6 +10,7 @@ function initializePage() {
     
     switch(currentPage) {
         case 'index':
+            loadRecommendedArticles();
             loadArticles();
             setupSearch();
             setupCategoryCards();
@@ -66,6 +67,39 @@ function slugToTitle(slug) {
     return decodeURIComponent(slug.replace(/-/g, ' '));
 }
 
+// Load recommended articles on homepage
+function loadRecommendedArticles() {
+    const recommendedGrid = document.getElementById('recommendedGrid');
+    if (!recommendedGrid) return;
+
+    // Filter articles with featured flag
+    const recommendedArticles = articles.filter(article => article.featured === true);
+    
+    if (recommendedArticles.length === 0) {
+        recommendedGrid.innerHTML = '';
+        return;
+    }
+    
+    // Render recommended articles
+    recommendedGrid.innerHTML = recommendedArticles.map(article => {
+        const articleSlug = titleToSlug(article.title);
+        return `
+        <a href="article.html?title=${encodeURIComponent(articleSlug)}" class="recommended-card">
+            <div class="recommended-image">
+                <img src="${article.image}" alt="${article.title}">
+                <span class="recommended-badge">推荐</span>
+            </div>
+            <div class="recommended-content">
+                <div class="recommended-date">${formatDate(article.date)}</div>
+                <h3 class="recommended-title">${article.title}</h3>
+                <p class="recommended-excerpt">${article.excerpt}</p>
+                <span class="recommended-read-more">阅读更多 →</span>
+            </div>
+        </a>
+    `;
+    }).join('');
+}
+
 // Load articles on homepage
 let currentPage = 1;
 const articlesPerPage = 6;
@@ -76,6 +110,9 @@ function loadArticles(page = 1, filterCategory = null, searchTerm = null) {
     if (!articlesGrid) return;
 
     let filteredArticles = [...articles];
+    
+    // Sort articles by date (newest first)
+    filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
     
     // Apply category filter
     if (filterCategory && filterCategory !== 'all') {
