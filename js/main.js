@@ -563,6 +563,13 @@ function loadArticleDetail() {
         return;
     }
     
+    // Check if articles array is loaded
+    if (typeof articles === 'undefined' || !articles || articles.length === 0) {
+        console.error('Articles array not loaded');
+        document.querySelector('.article-detail').innerHTML = '<h1>Error: Articles data not loaded</h1>';
+        return;
+    }
+    
     // Find article by matching slug with title
     const article = articles.find(a => {
         const articleTitleSlug = titleToSlug(a.title);
@@ -571,6 +578,8 @@ function loadArticleDetail() {
     });
     
     if (!article) {
+        console.log('Article not found. Slug:', articleSlug);
+        console.log('Available articles:', articles.map(a => ({ id: a.id, title: a.title, slug: titleToSlug(a.title) })));
         document.querySelector('.article-detail').innerHTML = '<h1>Article not found</h1>';
         return;
     }
