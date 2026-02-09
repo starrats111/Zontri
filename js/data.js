@@ -366,6 +366,66 @@ const articles = [
                 image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400"
             }
         ]
+    },
+    {
+        id: 8,
+        title: "Why Your Skin Needs Different Care After 40",
+        category: "health",
+        date: "2026-02-01",
+        featured: true,
+        excerpt: "The skincare products that worked in your twenties and thirties might not cut it anymore. Here's what actually helps mature skin look its best.",
+        image: "image/7-1.png",
+        content: `
+            <p>I turned 42 last month, and something clicked. The concealer I'd been using for years suddenly looked cakey. My moisturizer wasn't doing enough. Even my foundation seemed to settle into lines I didn't remember having. It wasn't just me being overly critical—my skin had genuinely changed, and my old routine wasn't keeping up.</p>
+            
+            <p>If you're in your forties or beyond, you've probably noticed similar shifts. Your skin produces less oil, collagen production slows down, and those fine lines around your eyes and mouth become more noticeable. The good news? There are products specifically designed for these changes, and they can make a real difference.</p>
+            
+            <h2>What Actually Changes After 40</h2>
+            <p>Around your fortieth birthday, your skin starts behaving differently. Collagen production drops significantly—by some estimates, we lose about 1% of our collagen each year after 30. That means less elasticity, more visible wrinkles, and skin that doesn't bounce back the way it used to. Your skin also gets drier because oil glands become less active, and cell turnover slows down, which can make your complexion look duller.</p>
+            
+            <p>These aren't problems you can solve with the same products that worked in your twenties. You need formulas that address hydration, firmness, and texture all at once. That's where brands like <a href="https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com" target="_blank" rel="noopener noreferrer">Fièra</a> come in—they focus specifically on what mature skin needs.</p>
+            
+            <img src="image/7-2.png" alt="Mature skin care routine">
+            
+            <h2>The Concealer That Doesn't Settle</h2>
+            <p>One of the biggest frustrations I hear from friends my age is about under-eye concealer. It creases, it settles into fine lines, and it can make you look older instead of more refreshed. The issue is that many concealers are too thick or too drying for mature skin, which already tends to be drier and has more texture.</p>
+            
+            <p>What works better? Formulas that are hydrating but still provide coverage, with ingredients that help plump the skin rather than just covering it up. These types of products blend better and stay put without that heavy, mask-like feeling. They're designed to work with your skin's changing texture, not against it. <a href="https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com" target="_blank" rel="noopener noreferrer">Fièra</a> offers options specifically formulated for these concerns.</p>
+            
+            <img src="image/7-3.png" alt="Anti-aging skincare products">
+            
+            <h2>Building a Routine That Works</h2>
+            <p>When you're dealing with multiple concerns—dryness, fine lines, loss of firmness—you need a routine that addresses them all. That usually means a good cleanser, a hydrating serum or treatment, a richer moisturizer than you used to need, and makeup that complements your skin rather than fighting it.</p>
+            
+            <p>Many women find that sets work well because they're designed to work together. A <a href="https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com%2Fproducts%2Ffiera-morning-essentials" target="_blank" rel="noopener noreferrer">morning routine</a> might include a gentle cleanser, a vitamin C serum for brightness, a moisturizer with peptides or stem cells for firmness, and a concealer that doesn't settle. An evening routine might swap in retinol alternatives like bakuchiol, which can help with fine lines without the irritation that traditional retinol can cause.</p>
+            
+            <img src="image/7-4.png" alt="Skincare set for mature skin">
+            
+            <p>The key is consistency. Your skin won't transform overnight, but with the right products used regularly, you'll start noticing improvements in texture, hydration, and overall appearance within a few weeks. And honestly, that's what most of us want—not to look 25 again, but to look like the best version of ourselves at whatever age we are.</p>
+            
+            <h2>What I've Learned</h2>
+            <p>After trying different products and routines over the past couple of years, I've realized that the most important thing is finding formulas that actually work with mature skin instead of against it. That means looking for products specifically designed for 40+ skin, paying attention to ingredients that address your actual concerns, and being patient with results. For those who want a complete solution, a comprehensive <a href="https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com%2Fproducts%2Ftotal-package" target="_blank" rel="noopener noreferrer">Total Package Set</a> can address multiple concerns at once.</p>
+            
+            <img src="image/7-5.png" alt="Confident mature woman with glowing skin">
+            
+            <p>It's also worth remembering that skincare is personal. What works for your friend might not work for you, and that's okay. The goal isn't perfection—it's feeling confident in your own skin, whatever that looks like for you. And sometimes, that means updating your routine to match where your skin is now, not where it was ten years ago.</p>
+        `,
+        products: [
+            {
+                name: "Total Package Set",
+                description: "Complete skincare and makeup collection designed for mature skin, addressing wrinkles, dark circles, and loss of firmness",
+                image: "image/p-7-1.png",
+                price: "$357",
+                buyLink: "https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com%2Fproducts%2Ftotal-package"
+            },
+            {
+                name: "Morning Essentials",
+                description: "Essential morning routine set with cleanser, serum, and moisturizer to start your day with hydrated, glowing skin",
+                image: "image/p-7-2.png",
+                price: "$119",
+                buyLink: "https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com%2Fproducts%2Ffiera-morning-essentials"
+            }
+        ]
     }
 ];
 
@@ -518,6 +578,38 @@ const products = [
         ],
         buyLink: "https://www.badlandsgear.com/",
         relatedArticleId: 7
+    },
+    {
+        id: 19,
+        name: "Total Package Set",
+        category: "health",
+        description: "Complete skincare and makeup collection designed for mature skin, addressing wrinkles, dark circles, and loss of firmness. Includes cleanser, serums, moisturizers, and makeup essentials.",
+        price: "$357",
+        image: "image/p-7-1.png",
+        rating: 4.3,
+        reviewCount: 4,
+        reviews: [
+            { author: "Susan M.", rating: 5, comment: "This set has everything I need. My skin looks so much better after just a few weeks!", date: "2026-01-28" },
+            { author: "Patricia K.", rating: 4, comment: "Great value for the money. All products work well together.", date: "2026-01-25" }
+        ],
+        buyLink: "https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com%2Fproducts%2Ftotal-package",
+        relatedArticleId: 8
+    },
+    {
+        id: 21,
+        name: "Morning Essentials",
+        category: "health",
+        description: "Essential morning routine set with cleanser, serum, and moisturizer to start your day with hydrated, glowing skin. Perfect for mature skin care.",
+        price: "$119",
+        image: "image/p-7-2.png",
+        rating: 4.8,
+        reviewCount: 8,
+        reviews: [
+            { author: "Linda R.", rating: 5, comment: "Love this morning routine! My skin feels so hydrated and looks brighter.", date: "2026-01-30" },
+            { author: "Carol T.", rating: 5, comment: "Perfect set for starting the day. Products work beautifully together.", date: "2026-01-27" }
+        ],
+        buyLink: "https://www.linkhaitao.com/index.php?mod=lhdeal&track=842dZuyuSe_alynnV_btOuEUONGwxiE13K5IMwifCSaERcNHFExlPgauhFqmuJaJkw2HpTzb_bJCdQg6p4MaOL_a&new=https%3A%2F%2Ffieracosmetics.com%2Fproducts%2Ffiera-morning-essentials",
+        relatedArticleId: 8
     }
 ];
 

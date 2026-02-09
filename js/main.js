@@ -596,9 +596,9 @@ function loadArticleDetail() {
             <h2>Recommended Products</h2>
             <div class="products-grid">
                 ${article.products.map(product => {
-                    const productSlug = titleToSlug(product.name);
+                    const productLink = product.buyLink || `product.html?name=${encodeURIComponent(titleToSlug(product.name))}`;
                     return `
-                    <a href="product.html?name=${encodeURIComponent(productSlug)}" class="product-card">
+                    <a href="${productLink}" ${product.buyLink ? 'target="_blank" rel="noopener noreferrer"' : ''} class="product-card">
                         <div class="product-image">
                             <img src="${product.image}" alt="${product.name}">
                         </div>
