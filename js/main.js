@@ -42,13 +42,15 @@ function initializePage() {
 
 function getCurrentPage() {
     const path = window.location.pathname;
-    if (path.includes('article.html')) return 'article';
-    if (path.includes('articles.html')) return 'articles';
-    if (path.includes('category.html')) return 'category';
-    if (path.includes('products.html')) return 'products';
-    if (path.includes('product.html')) return 'product';
-    if (path.includes('about.html')) return 'about';
-    if (path.includes('contact.html')) return 'contact';
+    // Support both /article and /article.html formats
+    // Check exact match first (without .html), then with .html
+    if (path === '/article' || path === '/article/' || path.includes('article.html')) return 'article';
+    if (path === '/articles' || path === '/articles/' || path.includes('articles.html')) return 'articles';
+    if (path === '/category' || path === '/category/' || path.includes('category.html')) return 'category';
+    if (path === '/products' || path === '/products/' || path.includes('products.html')) return 'products';
+    if (path === '/product' || path === '/product/' || path.includes('product.html')) return 'product';
+    if (path === '/about' || path === '/about/' || path.includes('about.html')) return 'about';
+    if (path === '/contact' || path === '/contact/' || path.includes('contact.html')) return 'contact';
     return 'index';
 }
 
@@ -555,20 +557,31 @@ function setupFilterButtons() {
 
 // Article detail page
 function loadArticleDetail() {
+    const articleDetailEl = document.querySelector('.article-detail');
+    
+    // Add loading indicator
+    if (articleDetailEl) {
+        articleDetailEl.innerHTML = '<p>Loading article...</p>';
+    }
+    
     const urlParams = new URLSearchParams(window.location.search);
     const articleSlug = urlParams.get('title');
     
+    console.log('loadArticleDetail called, slug:', articleSlug);
+    
     if (!articleSlug) {
-        document.querySelector('.article-detail').innerHTML = '<h1>Article not found</h1>';
+        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Article not found</h1><p>No article title specified in URL.</p>';
         return;
     }
     
     // Check if articles array is loaded
     if (typeof articles === 'undefined' || !articles || articles.length === 0) {
         console.error('Articles array not loaded');
-        document.querySelector('.article-detail').innerHTML = '<h1>Error: Articles data not loaded</h1>';
+        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Error: Articles data not loaded</h1><p>Please check if data.js is loaded correctly.</p>';
         return;
     }
+    
+    console.log('Articles loaded:', articles.length, 'articles');
     
     // Find article by matching slug with title
     const article = articles.find(a => {
@@ -580,9 +593,11 @@ function loadArticleDetail() {
     if (!article) {
         console.log('Article not found. Slug:', articleSlug);
         console.log('Available articles:', articles.map(a => ({ id: a.id, title: a.title, slug: titleToSlug(a.title) })));
-        document.querySelector('.article-detail').innerHTML = '<h1>Article not found</h1>';
+        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Article not found</h1><p>Could not find article with slug: ' + articleSlug + '</p>';
         return;
     }
+    
+    console.log('Article found:', article.title);
     
     const articleDetail = document.querySelector('.article-detail');
     if (!articleDetail) return;
