@@ -595,18 +595,25 @@ async function loadArticleDetail() {
     
     // Load full article content from individual JSON file
     try {
-        const response = await fetch(`js/articles/${articleMeta.id}.json`);
+        const jsonUrl = `js/articles/${articleMeta.id}.json`;
+        console.log('Fetching article from:', jsonUrl);
+        
+        const response = await fetch(jsonUrl);
         if (!response.ok) {
-            throw new Error('Failed to load article content');
+            throw new Error(`Failed to load article content: ${response.status} ${response.statusText}`);
         }
         const article = await response.json();
+        
+        console.log('Article loaded:', article.title);
+        console.log('Content exists:', !!article.content);
+        console.log('Content length:', article.content ? article.content.length : 0);
         
         // Render the article
         renderArticleContent(article, articleDetailEl);
         
     } catch (error) {
         console.error('Error loading article:', error);
-        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Error loading article</h1><p>Please try again later.</p>';
+        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Error loading article</h1><p>' + error.message + '</p>';
     }
 }
 
