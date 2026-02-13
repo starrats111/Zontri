@@ -131,13 +131,12 @@ function loadArticles(page = 1, filterCategory = null, searchTerm = null) {
         filteredArticles = filteredArticles.filter(article => article.category === filterCategory);
     }
     
-    // Apply search filter
+    // Apply search filter (search in title and excerpt only, content is in separate JSON files)
     if (searchTerm) {
         const term = searchTerm.toLowerCase();
         filteredArticles = filteredArticles.filter(article => 
             article.title.toLowerCase().includes(term) ||
-            article.excerpt.toLowerCase().includes(term) ||
-            article.content.toLowerCase().includes(term)
+            (article.excerpt && article.excerpt.toLowerCase().includes(term))
         );
     }
     
@@ -555,54 +554,67 @@ function setupFilterButtons() {
     });
 }
 
-// Article detail page
-function loadArticleDetail() {
+// Article detail page - async loading from individual JSON files
+async function loadArticleDetail() {
     const articleDetailEl = document.querySelector('.article-detail');
     
     // Add loading indicator
     if (articleDetailEl) {
-        articleDetailEl.innerHTML = '<p>Loading article...</p>';
+        articleDetailEl.innerHTML = '<div style="text-align: center; padding: 50px;"><p>Loading article...</p></div>';
     }
     
     const urlParams = new URLSearchParams(window.location.search);
     const articleSlug = urlParams.get('title');
-    
-    console.log('loadArticleDetail called, slug:', articleSlug);
     
     if (!articleSlug) {
         if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Article not found</h1><p>No article title specified in URL.</p>';
         return;
     }
     
-    // Check if articles array is loaded
-    if (typeof articles === 'undefined' || !articles || articles.length === 0) {
-        console.error('Articles array not loaded');
-        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Error: Articles data not loaded</h1><p>Please check if data.js is loaded correctly.</p>';
+    // Check if articlesIndex is loaded (use articlesIndex for new format, fallback to articles for compatibility)
+    const indexData = typeof articlesIndex !== 'undefined' ? articlesIndex : articles;
+    
+    if (!indexData || indexData.length === 0) {
+        console.error('Articles index not loaded');
+        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Error: Articles data not loaded</h1><p>Please check if articles-index.js is loaded correctly.</p>';
         return;
     }
     
-    console.log('Articles loaded:', articles.length, 'articles');
-    
-    // Find article by matching slug with title
-    const article = articles.find(a => {
-        const articleTitleSlug = titleToSlug(a.title);
+    // Find article in index by matching slug with title
+    const articleMeta = indexData.find(a => {
+        const articleTitleSlug = a.slug || titleToSlug(a.title);
         return articleTitleSlug === decodeURIComponent(articleSlug) || 
                articleTitleSlug === articleSlug;
     });
     
-    if (!article) {
-        console.log('Article not found. Slug:', articleSlug);
-        console.log('Available articles:', articles.map(a => ({ id: a.id, title: a.title, slug: titleToSlug(a.title) })));
+    if (!articleMeta) {
+        console.log('Article not found in index. Slug:', articleSlug);
         if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Article not found</h1><p>Could not find article with slug: ' + articleSlug + '</p>';
         return;
     }
     
-    console.log('Article found:', article.title);
+    // Load full article content from individual JSON file
+    try {
+        const response = await fetch(`js/articles/${articleMeta.id}.json`);
+        if (!response.ok) {
+            throw new Error('Failed to load article content');
+        }
+        const article = await response.json();
+        
+        // Render the article
+        renderArticleContent(article, articleDetailEl);
+        
+    } catch (error) {
+        console.error('Error loading article:', error);
+        if (articleDetailEl) articleDetailEl.innerHTML = '<h1>Error loading article</h1><p>Please try again later.</p>';
+    }
+}
+
+// Render article content to the page
+function renderArticleContent(article, container) {
+    if (!container) return;
     
-    const articleDetail = document.querySelector('.article-detail');
-    if (!articleDetail) return;
-    
-    articleDetail.innerHTML = `
+    container.innerHTML = `
         <div class="article-header">
             <img src="${article.image}" alt="${article.title}" class="article-header-image">
             <div class="article-meta">
@@ -638,6 +650,9 @@ function loadArticleDetail() {
         </div>
         ` : ''}
     `;
+    
+    // Update page title
+    document.title = article.title + ' - Zontri';
 }
 
 // Generate star rating helper function
